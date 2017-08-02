@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// jQ是一个工厂函数
+		// jQ是一个自调用函数，沙箱模式，
+		// 形成闭包，变量私有，防止全局污染
+		(function(global,factory){
+			// 自调用函数中执行将jQ模块化
+
+			// 第一个参数，是全局变量，在浏览器环境中为window,nodeJS中是global，this既是全局变量
+
+			// 第二个参数当做回调函数调用,属性和方法在这里写
+			factory(global);
+
+		})(window?window:this,function(window){
+
+			// $的函数本体是一个工厂函数
+			var jQuery=function( selector, context ){
+				return jQuery.fn.init(selector, context);
+			}
+
+			// 给原型添加一个简称$.fn
+			jQuery.fn=jQuery.prototype={
+				consturctor:jQuery
+			}
+
+			// 构造函数
+			var init = jQuery.fn.init = function(selector, context,root){
+
+			}
+
+			// 将init的原型指向jquery原型
+			init.prototype=jQuery.fn;
+
+			// 向外暴露$
+			window.jQuery=window.$=jQuery;
+		})
+	</script>
+</body>
+</html>
