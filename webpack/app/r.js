@@ -1,0 +1,1 @@
+document.write("it is from r.js");

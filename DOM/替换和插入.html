@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul id="ul">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+	</ul>
+
+	<script>
+		var ul = document.getElementById("ul");
+		var li = ul.getElementsByTagName("li");
+
+		// 插入元素
+		var newli = document.createElement("li");
+		newli.innerHTML="0";
+		ul.insertBefore(newli,li[0]);
+
+		// 替换元素
+		var lastli = document.createElement("li");
+		lastli.innerHTML = "7";
+		ul.replaceChild(lastli,li[2]);
+	</script>
+</body>
+</html>

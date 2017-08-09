@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<ul class="a">
+	<li class="b">1</li>
+	<li class="c d">2</li>
+	<li class="c f">3</li>
+	<li class="b d">4</li>
+	<li class="b c">5</li>
+	<li class="b c f">6</li>
+</ul>
+
+<script src="./public/js/jquery-3.2.1.js"></script>
+<script>
+	// 第一题
+	/*var count = 3
+	function fun() {
+		this.count = 5
+		this.log = function () {
+			console.log(this.count)
+		}
+	}
+
+	var f = new fun();
+
+	f.log()
+	f["log"].apply()
+	f["log"].apply(f)
+	f["log"].call()
+	f["log"].call(f)*/
+
+	// 第二题
+	/*function A(p1,p2) {
+		this.pro = p1
+		this.pro_2 = p2
+	}
+	A.prototype = {
+		p: "aaa"
+	}
+	function B(t,f) {
+		A.apply(this, arguments)
+		this.ext = "extra"
+	}
+	console.log(new A("1","2"))
+	console.log(new B("11","22"))*/
+	/*
+	{
+	pro: "11"
+	pro_2: "22"
+	ext: "extra"
+	}
+	*/
+
+	// 第三题
+	/*for(var i = 5;i > 2;--i){
+		// console.log(i)
+		$("ul li").eq(i).click(function () {
+			alert(i) //2
+		})
+	}
+	console.log($(".a .b").length) //4
+	console.log($(".a .b.c").length) //2
+	console.log($(".a .c.d").length) //1*/
+
+	// 第四题
+	/*	var num = 10;
+	function f1(){
+		console.log(num,"1");
+		var num = 20;
+		console.log(num,"2");
+	}
+
+	function f2(){
+		num=30;
+		console.log(num,"3");
+	}
+
+	function f3(num,callback){
+		num=40;
+		console.log(num,"6");
+		setTimeout(function(){
+			callback();
+		},500);	
+	}
+
+	setTimeout(function(){
+		f1();
+		console.log(num,"4");
+	},1000);
+
+	f3(num,f2);
+
+	console.log(num,"5");*/
+</script>
+</body>
+</html>
