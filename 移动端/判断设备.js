@@ -20,8 +20,8 @@ function browerRedirect(){
 var browser={  
     versions:function(){   
         var u = navigator.userAgent;
-        var app = navigator.appVersion;   
-        return {//移动终端浏览器版本信息   
+        var app = navigator.appVersion;  //移动终端浏览器版本信息    
+        return {
             trident: u.indexOf('Trident') > -1, //IE内核  
             presto: u.indexOf('Presto') > -1, //opera内核  
             webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核  
